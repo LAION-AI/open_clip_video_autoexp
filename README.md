@@ -7,7 +7,7 @@
 For experiment management, we use autoexp <https://github.com/slampai/autoexperiment>.
 We provide:
 
-- the config file[config.yaml](config.yaml)
+- the config file [config.yaml](config.yaml)
 - train and eval template files [train.sbatch](train.sbatch) [eval.sbatch](eval.sbatch).
 
 ## Models
