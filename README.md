@@ -10,7 +10,7 @@ We provide the config [config.yaml](config.yaml), and template files [train.sbat
 
 ## Models
 
-- We provide our best ViCLIP ViT-L-14 model in <https://huggingface.co/laion/ViCLIP-L-14-BVD-V-50M-s50M-b32K-WiSE-FT>
+We provide our best ViCLIP ViT-L-14 model in <https://huggingface.co/laion/ViCLIP-L-14-BVD-V-50M-s50M-b32K-WiSE-FT>
 
 ## Downstream tasks
 
