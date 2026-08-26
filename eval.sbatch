@@ -33,4 +33,4 @@ export PYTHONPATH=/path/to/CLIP_benchmark_video:/path/to/open_clip_video/src:$PY
 export LD_LIBRARY_PATH=/path/to/mamba/envs/torch-2.10.0/lib:$LD_LIBRARY_PATH # for ffmpeg / torchcodec
 ulimit -c 0
 # nevals: {nevals}
-srun python -u `which clip_benchmark`  eval --model {model} --pretrained {logs}/{folder_name}/checkpoints/epoch_[0-9]*.pt --dataset {evals} --dataset_root "/path/to/video_benchmarks/{{dataset}}" --output '{logs}/{folder_name}/checkpoints/{{dataset}}_{{pretrained}}_{{model}}_{{language}}_{{task}}.json' --skip_existing --distributed --recall_k 1 5 10 --num_workers 1 --model_cache_dir $OPEN_CLIP_CACHE_DIR
+srun python -u `which clip_benchmark`  eval --model {model} --pretrained {logs}/{folder_name}/checkpoints/epoch_[0-9]*.pt --dataset {evals} --dataset_root "/path/to/video_benchmarks/{{dataset}}" --output '{logs}/{folder_name}/checkpoints/{{dataset}}_{{pretrained}}_{{model}}_{{language}}_{{task}}.json' --skip_existing --distributed --recall_k 1 5 10 --num_workers 8 --model_cache_dir $OPEN_CLIP_CACHE_DIR
