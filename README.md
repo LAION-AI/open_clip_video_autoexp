@@ -8,12 +8,16 @@ For experiment management, we use autoexp <https://github.com/slampai/autoexperi
 We provide the config [config.yaml](config.yaml), and template files [train.sbatch](train.sbatch),
 [eval.sbatch](eval.sbatch).
 
+
 ## Results
 
 We provide full results on downstream tasks in [results.parquet](results.parquet) which can be displayed
 using [summarize_results.py](summarize_results.py) helper script.
+The datasets used for evaluation (Kinetics-400, UCF-101, HMDB-51,  MSR-VTT, MSVD) are available at <https://huggingface.co/laion/video_benchmarks>
+in WebDataset form.
 
-Best results for each ViCLIP model size can be displayed using:
+
+To show best results for each ViCLIP model size:
 
 ```
 python summarize_results.py --model ViCLIP --keep_best
