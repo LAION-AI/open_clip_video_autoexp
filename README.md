@@ -12,7 +12,7 @@ We provide:
 
 ## Models
 
-We provide our best ViCLIP ViT-L-14 model at <https://huggingface.co/laion/ViCLIP-L-14-BVD-V-50M-s50M-b32K-WiSE-FT>.
+We provide our best ViCLIP L-14 model at <https://huggingface.co/laion/ViCLIP-L-14-BVD-V-50M-s50M-b32K-WiSE-FT>.
 
 ## Downstream tasks
 
