@@ -5,8 +5,10 @@
 ## AutoExp config
 
 For experiment management, we use autoexp <https://github.com/slampai/autoexperiment>.
-We provide the config [config.yaml](config.yaml), and template files [train.sbatch](train.sbatch),
-[eval.sbatch](eval.sbatch).
+We provide:
+
+- the config file[config.yaml](config.yaml)
+- train and eval template files [train.sbatch](train.sbatch) [eval.sbatch](eval.sbatch).
 
 ## Models
 
