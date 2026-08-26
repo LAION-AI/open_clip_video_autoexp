@@ -1,0 +1,1 @@
+{"dataset": "wds/hmdb51", "model": "ViT-B-16-SigLIP2", "pretrained": "webli", "task": "video_classification", "metrics": {"acc1": 0.43803288672350793, "acc5": 0.7553288672350792, "mean_per_class_recall": 0.4706850829708092}, "language": "en"}

@@ -1,0 +1,1 @@
+{"dataset": "wds/UCF-101", "model": "ViT-B-16-SigLIP2", "pretrained": "webli", "task": "video_classification", "metrics": {"acc1": 0.7913165266106442, "acc5": 0.9785914365746299, "mean_per_class_recall": 0.7915994992943759}, "language": "en"}

@@ -1,0 +1,1 @@
+{"dataset": "wds/hmdb51-with-splits", "model": "ViT-L-14", "pretrained": "/e/data1/datasets/products/mmlaion/shared/models/open_clip/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/open_clip_pytorch_model.bin", "task": "video_classification", "metrics": {"acc1": 0.4814314652261985, "acc5": 0.800135043889264, "mean_per_class_recall": 0.4842137365802004}, "language": "en"}

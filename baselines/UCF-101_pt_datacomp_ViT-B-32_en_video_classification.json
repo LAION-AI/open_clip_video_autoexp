@@ -1,0 +1,1 @@
+{"dataset": "wds/UCF-101", "model": "ViT-B-32", "pretrained": "/e/data1/datasets/products/mmlaion/shared/models/open_clip/CLIP-ViT-B-32-DataComp.XL-s13B-b90K/open_clip_pytorch_model.bin", "task": "video_classification", "metrics": {"acc1": 0.6927771108443377, "acc5": 0.9201680672268907, "mean_per_class_recall": 0.6957746489259161}, "language": "en"}

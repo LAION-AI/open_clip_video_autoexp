@@ -1,0 +1,270 @@
+train_time: "07:30:00"
+eval_time: "03:00:00"
+cmd: "sbatch {sbatch_script}"
+check_interval_secs: 600
+partition: booster
+account: reformo
+lr: [1e-6, 4e-6, 1e-5, 4e-5, 1e-4, 4e-4]
+seed: [0, 1, 2, 3, 4]
+experiments:
+    model_scale:
+        - ViT-B-32_pt_datacomp:
+            model: ViT-L-14
+            beta1: 0.9
+            beta2: 0.98
+            wd: 0.2
+            grad_clip_norm: 1
+            pretrained: "/path/to/models/open_clip/CLIP-ViT-B-32-DataComp.XL-s13B-b90K/open_clip_pytorch_model.bin"
+            lock: ""
+            workers: 8
+        - ViT-B-16_pt_datacomp:
+            model: ViT-L-14
+            beta1: 0.9
+            beta2: 0.98
+            wd: 0.2
+            grad_clip_norm: 1
+            pretrained: "/path/to/models/open_clip/CLIP-ViT-B-16-DataComp.XL-s13B-b90K/open_clip_pytorch_model.bin"
+            lock: ""
+            workers: 8
+        - ViT-L-14_pt_datacomp:
+            model: ViT-L-14
+            beta1: 0.9
+            beta2: 0.98
+            wd: 0.2
+            grad_clip_norm: 1
+            pretrained: "/path/to/models/open_clip/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/open_clip_pytorch_model.bin"
+            lock: ""
+            workers: 4
+        - ViT-L-14_pt_openai:
+            model: ViT-L-14
+            beta1: 0.9
+            beta2: 0.98
+            wd: 0.2
+            grad_clip_norm: 1
+            pretrained: "/path/to/models/open_clip/CLIP-ViT-L-14-openai/ViT-L-14.pt"
+            lock: ""
+            workers: 4
+        - ViCLIP_ViT-B-32_pt_datacomp:
+            model: ViCLIP_ViT-B-32
+            beta1: 0.9
+            beta2: 0.98
+            wd: 0.2
+            grad_clip_norm: 1
+            pretrained: "/path/to/models/open_clip/CLIP-ViT-B-32-DataComp.XL-s13B-b90K/open_clip_pytorch_model.bin"
+            lock: ""
+            workers: 14
+        - ViCLIP_ViT-B-16_pt_datacomp:
+            model: ViCLIP_ViT-B-16
+            beta1: 0.9
+            beta2: 0.98
+            wd: 0.2
+            grad_clip_norm: 1
+            pretrained: "/path/to/models/open_clip/CLIP-ViT-B-16-DataComp.XL-s13B-b90K/open_clip_pytorch_model.bin"
+            lock: ""
+            workers: 4
+        - ViCLIP_ViT-L-14_pt_datacomp:
+            model: ViCLIP_ViT-L-14
+            beta1: 0.9
+            beta2: 0.98
+            wd: 0.2
+            grad_clip_norm: 1
+            pretrained: "/path/to/models/open_clip/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/open_clip_pytorch_model.bin"
+            lock: ""
+            workers: 4
+        - ViCLIP_ViT-L-14_pt_openai:
+            model: ViCLIP_ViT-L-14
+            beta1: 0.9
+            beta2: 0.98
+            wd: 0.2
+            grad_clip_norm: 1
+            pretrained: "/path/to/models/open_clip/CLIP-ViT-L-14-openai/ViT-L-14.pt"
+            lock: ""
+            workers: 4
+        - ViT-B-16-SigLIP2:
+            model: ViT-B-16-SigLIP2
+            beta1: 0.9
+            beta2: 0.98
+            wd: [0.2, 0.0]
+            grad_clip_norm: 1
+            lock: ""
+            pretrained: "/path/to/models/open_clip/ViT-B-16-SigLIP2/open_clip_pytorch_model.bin"
+            workers: 4
+        - PE-Core-B16-224:
+            model: PE-Core-B16-224 
+            beta1: 0.9
+            beta2: 0.98
+            wd: [0.2, 0.0]
+            grad_clip_norm: 1
+            lock: ""
+            pretrained: "/path/to/models/perception_models/PE-Core-B16-224/PE-Core-B16-224.pt"
+            workers: 4
+        - PE-Core-B16-224-locked-image-tower:
+            model: PE-Core-B16-224 
+            beta1: 0.9
+            beta2: 0.98
+            wd: [0.2, 0.0]
+            grad_clip_norm: 1
+            lock: "--lock-image"
+            pretrained: "/path/to/models/perception_models/PE-Core-B16-224/PE-Core-B16-224.pt"
+            workers: 4
+        - PE-Core-B16-224-TemporalAttn:
+            model: PE-Core-B16-224-TemporalAttn
+            beta1: 0.9
+            beta2: 0.98
+            wd: 0.2
+            grad_clip_norm: 1
+            lock: ""
+            pretrained: "/path/to/models/perception_models/PE-Core-B16-224/PE-Core-B16-224.pt"
+            workers: 4
+    samples_seen_scale:
+        - 10M_globalbs_8064_localbs_336_no_resampling:
+            batch_size: 336 
+            nodes: 6
+            train_num_samples: 10000000
+            dataset_args: ""
+            epochs: 1
+            warmup: 100
+        - 10M_globalbs_32000_localbs_320_no_resampling:
+            batch_size: 320
+            nodes: 25
+            train_num_samples: 10000000
+            dataset_args: ""
+            epochs: 1
+            warmup: 100
+        - 50M_globalbs_8064_localbs_336_no_resampling:
+            batch_size: 336 
+            nodes: 6
+            train_num_samples: 50000000
+            dataset_args: ""
+            epochs: 1
+            warmup: 100
+        - 50M_globalbs_32000_localbs_320_no_resampling:
+            batch_size: 320
+            nodes: 25
+            train_num_samples: 50000000
+            dataset_args: ""
+            epochs: 1
+            warmup: 100
+        - 10M_globalbs_8064_localbs_336:
+            batch_size: 336 
+            nodes: 6
+            train_num_samples: 10000000
+            dataset_args: "--dataset-resampled"
+            epochs: 1
+            warmup: 100
+        - 10M_globalbs_32000_localbs_320:
+            batch_size: 320
+            nodes: 25
+            train_num_samples: 10000000
+            dataset_args: "--dataset-resampled"
+            epochs: 1
+            warmup: 100
+        - 10M_globalbs_8064_localbs_672:
+            batch_size: 672
+            nodes: 3
+            train_num_samples: 10000000
+            dataset_args: "--dataset-resampled"
+            epochs: 1
+            warmup: 100
+        - 10M_globalbs_32256_localbs_672:
+            batch_size: 672
+            nodes: 12
+            train_num_samples: 10000000
+            dataset_args: "--dataset-resampled"
+            epochs: 1
+            warmup: 100
+        - 50M_globalbs_8064_localbs_336:
+            batch_size: 336 
+            nodes: 6
+            train_num_samples: 10000000
+            dataset_args: "--dataset-resampled"
+            epochs: 5
+            warmup: 100
+        - 50M_globalbs_32000_localbs_320:
+            batch_size: 320
+            nodes: 25
+            train_num_samples: 10000000
+            dataset_args: "--dataset-resampled"
+            epochs: 5
+            warmup: 100
+        - 50M_globalbs_8064_localbs_672:
+            batch_size: 672
+            nodes: 3
+            train_num_samples: 10000000
+            dataset_args: "--dataset-resampled"
+            epochs: 5
+            warmup: 100
+        - 50M_globalbs_32256_localbs_672:
+            batch_size: 672
+            nodes: 12
+            train_num_samples: 10000000
+            dataset_args: "--dataset-resampled"
+            epochs: 5
+            warmup: 100
+        - 22M_globalbs_22528_localbs_352:
+            batch_size: 352 
+            nodes: 16
+            train_num_samples: 4400000 
+            dataset_args: "--dataset-resampled"
+            epochs: 5
+            warmup: 100
+        - 22M_globalbs_36864_localbs_576:
+            batch_size: 576 
+            nodes: 16
+            train_num_samples: 4400000 
+            dataset_args: "--dataset-resampled"
+            epochs: 5
+            warmup: 100
+        - 65M_globalbs_36864_localbs_576:
+            batch_size: 576 
+            nodes: 16
+            train_num_samples: 13000000
+            dataset_args: "--dataset-resampled"
+            epochs: 5
+            warmup: 100
+root_folder: /path/to/open_clip_video_autoexp
+mode:
+  - train:
+      template: "{root_folder}/train.sbatch"
+      sbatch_script: "{root_folder}/sbatch/{experiment_name}_train.sbatch"
+      output_file: "{logs}/{experiment_name}/slurm_train.out"
+      termination_cmd: "[ -f {logs}/{experiment_name}/checkpoints/epoch_{epochs}.pt ] && echo 1 || echo 0"
+  - eval:
+      template: "{root_folder}/eval.sbatch"
+      sbatch_script: "{root_folder}/sbatch/{experiment_name}_eval.sbatch"
+      output_file: "{logs}/{experiment_name}/slurm_eval.out"
+      eval_nodes: 1
+      evals: "wds/hmdb51 wds/kinetics400 wds/MSR-VTT wds/MSVD wds/UCF-101 wds/hmdb51-with-splits wds/UCF-101-with-splits"
+      nevals: "expr(len('{evals}'.split()))"
+      start_condition_cmd: "nc=`ls {logs}/{experiment_name}/checkpoints/epoch_[0-9]*.pt|wc -l`;ne=`ls {logs}/{experiment_name}/checkpoints/*.json|wc -l`;echo $(( (nc*{nevals}-ne) > 0 ))"
+      termination_cmd: "ne=`ls {logs}/{experiment_name}/checkpoints/*.json|wc -l`;echo $(( (ne) == {epochs}*{nevals} ))"
+  - dev_eval:
+      template: "{root_folder}/dev_eval.sbatch"
+      sbatch_script: "{root_folder}/sbatch/{experiment_name}_dev_eval.sbatch"
+      output_file: "{logs}/{experiment_name}/slurm_dev_eval.out"
+      eval_nodes: 1
+      evals: "wds/hmdb51 wds/kinetics400 wds/MSR-VTT wds/MSVD wds/UCF-101 wds/hmdb51-with-splits wds/UCF-101-with-splits wds/BVD-10k"
+      nevals: "expr(len('{evals}'.split()))"
+      start_condition_cmd: "nc=`ls {logs}/{experiment_name}/checkpoints/epoch_{epochs}.pt|wc -l`;ne=`ls {logs}/{experiment_name}/checkpoints/dev/*.json|wc -l`;echo $(( (nc*{nevals}-ne) > 0 ))"
+      termination_cmd: "ne=`ls {logs}/{experiment_name}/checkpoints/dev/*.json|wc -l`;echo $(( (ne) == {nevals} ))"
+  - decontaminated_eval:
+      template: "{root_folder}/decontaminated_eval.sbatch"
+      sbatch_script: "{root_folder}/sbatch/{experiment_name}_decontaminated_eval.sbatch"
+      output_file: "{logs}/{experiment_name}/slurm_decontaminated_eval.out"
+      eval_nodes: 1
+      evals: "wds/kinetics400"
+      nevals: "expr(len('{evals}'.split()))"
+      start_condition_cmd: "nc=`ls {logs}/{experiment_name}/checkpoints/epoch_{epochs}.pt|wc -l`;ne=`ls {logs}/{experiment_name}/checkpoints/decontaminated/*.json|wc -l`;echo $(( (nc*{nevals}-ne) > 0 ))"
+      termination_cmd: "ne=`ls {logs}/{experiment_name}/checkpoints/decontaminated/*.json|wc -l`;echo $(( (ne) == {nevals} ))"
+dataset: 
+    - bvd:
+        train_data: "/path/to/datasets/BVD_scenes_flat"
+    - bvd_10M:
+        train_data: "/path/to/datasets/BVD_scenes_flat/{{00000..01291}}.tar"
+    - bvd_50M:
+        train_data: "/path/to/datasets/BVD_scenes_flat/{{00000..06454}}.tar"
+logs: "/path/to/logs"
+raw_experiment_name: "{dataset}_s{samples_seen_scale}_{model_scale}_ep{epochs}_lr{lr}_b1_{beta1}_b2_{beta2}_wd{wd}_w{warmup}_gc{grad_clip_norm}_n{nodes}_bs{batch_size}"
+experiment_name: "{raw_experiment_name}_seed{seed}"
+name: "{experiment_name}_{mode}"
+folder_name: "{experiment_name}"

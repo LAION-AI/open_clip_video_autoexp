@@ -1,0 +1,1 @@
+{"dataset": "wds/hmdb51", "model": "ViT-B-16", "pretrained": "/e/data1/datasets/products/mmlaion/shared/models/open_clip/CLIP-ViT-B-16-DataComp.XL-s13B-b90K/open_clip_pytorch_model.bin", "task": "video_classification", "metrics": {"acc1": 0.3871802679658953, "acc5": 0.7058465286236297, "mean_per_class_recall": 0.408301393315317}, "language": "en"}

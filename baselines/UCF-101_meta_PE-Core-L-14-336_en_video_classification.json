@@ -1,0 +1,1 @@
+{"dataset": "wds/UCF-101", "model": "PE-Core-L-14-336", "pretrained": "meta", "task": "video_classification", "metrics": {"acc1": 0.8857543017206883, "acc5": 0.9961984793917567, "mean_per_class_recall": 0.8816255304350968}, "language": "en"}

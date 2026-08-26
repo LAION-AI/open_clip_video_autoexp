@@ -1,0 +1,1 @@
+{"dataset": "wds/kinetics400", "model": "PE-Core-B-16", "pretrained": "meta", "task": "video_classification", "metrics": {"acc1": 0.6487330478229836, "acc5": 0.8738401142041399, "mean_per_class_recall": 0.6476857664550466}, "language": "en"}

@@ -1,0 +1,1 @@
+{"dataset": "wds/kinetics400", "model": "ViT-L-14", "pretrained": "/e/data1/datasets/products/mmlaion/shared/models/openai/ViT-L-14/ViT-L-14.pt", "task": "video_classification", "metrics": {"acc1": 0.6197359029264811, "acc5": 0.8640256959314775, "mean_per_class_recall": 0.6169682730068287}, "language": "en"}

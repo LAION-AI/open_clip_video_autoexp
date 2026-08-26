@@ -1,0 +1,1 @@
+{"dataset": "wds/UCF-101", "model": "ViT-L-14", "pretrained": "/e/data1/datasets/products/mmlaion/shared/models/openai/ViT-L-14/ViT-L-14.pt", "task": "video_classification", "metrics": {"acc1": 0.7481992797118847, "acc5": 0.9530812324929971, "mean_per_class_recall": 0.7410827949089969}, "language": "en"}

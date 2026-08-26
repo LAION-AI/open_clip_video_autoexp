@@ -1,0 +1,1 @@
+{"dataset": "wds/hmdb51", "model": "PE-Core-L-14-336", "pretrained": "meta", "task": "video_classification", "metrics": {"acc1": 0.5889159561510353, "acc5": 0.8214068209500609, "mean_per_class_recall": 0.6137417838018595}, "language": "en"}

@@ -1,0 +1,1 @@
+{"dataset": "wds/kinetics400", "model": "ViT-L-14", "pretrained": "/e/data1/datasets/products/mmlaion/shared/models/open_clip/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/open_clip_pytorch_model.bin", "task": "video_classification", "metrics": {"acc1": 0.6119831398205373, "acc5": 0.8405006335496884, "mean_per_class_recall": 0.6113155767639289}, "language": "en"}

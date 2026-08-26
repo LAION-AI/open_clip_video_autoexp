@@ -1,0 +1,1 @@
+{"dataset": "wds/hmdb51", "model": "ViT-B-32", "pretrained": "/e/data1/datasets/products/mmlaion/shared/models/openai/ViT-B-32/ViT-B-32.pt", "task": "video_classification", "metrics": {"acc1": 0.43590133982947626, "acc5": 0.7318818514007308, "mean_per_class_recall": 0.45380869506121935}, "language": "en"}
