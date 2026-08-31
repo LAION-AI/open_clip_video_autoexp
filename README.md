@@ -16,7 +16,7 @@ We provide our best ViCLIP L-14 model at <https://huggingface.co/laion/ViCLIP-L-
 
 ## Downstream tasks
 
-The datasets used for evaluation (Kinetics-400, UCF-101, HMDB-51,  MSR-VTT, MSVD) are available at [[https://huggingface.co/laion/video_benchmarks](https://huggingface.co/laion/video_benchmarks)]([https://huggingface.co/laion/video_benchmarks/tree/main](https://huggingface.co/datasets/laion/video_benchmarks/tree/main))
+The datasets used for evaluation (Kinetics-400, UCF-101, HMDB-51,  MSR-VTT, MSVD) are available at [https://huggingface.co/laion/video_benchmarks](https://huggingface.co/laion/video_benchmarks)]([https://huggingface.co/laion/video_benchmarks/tree/main](https://huggingface.co/datasets/laion/video_benchmarks/tree/main))
 in WebDataset form.
 
 ## Results
