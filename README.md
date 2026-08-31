@@ -23,7 +23,7 @@ The datasets used for evaluation (Kinetics-400, UCF-101, HMDB-51,  MSR-VTT, MSVD
 We provide full results on downstream tasks in [results.parquet](results.parquet) which can be displayed
 using [summarize_results.py](summarize_results.py) helper script.
 
-To show best results for each ViCLIP model size:
+To show best results for each (ViCLIP model size, pre-training dataset, samples seen) triplet:
 
 ```
 python summarize_results.py --model ViCLIP --keep_best
